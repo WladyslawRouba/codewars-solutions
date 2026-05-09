@@ -1,14 +1,15 @@
 function flatten(...args) {
-    const result = [];
-  function helper (arr){
-    for(const item of arr){
-      if(Array.isArray(item)){
-        helper(item)
-      }else{
-        result.push(item)
-      }
+  const result = []
+  const stack = [...args]
+  
+  while(stack.length > 0){
+    const value = stack.pop()
+    if(Array.isArray(value)){
+      
+      stack.push(...value)
+    }else{
+      result.push(value)
     }
   }
-  helper(args)
-  return result
+  return result.reverse()
 }
