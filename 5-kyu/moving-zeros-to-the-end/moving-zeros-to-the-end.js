@@ -1,9 +1,5 @@
 function moveZeros(arr) {
-  const result = []
-  let zeros = 0
-  for(const item of arr){
-    if(item === 0)zeros++
-  else result.push(item)
-  }
-  return result.concat(Array(zeros).fill(0))
+const withoutZeros = arr.filter(item => item !== 0)
+const zerosCount = arr.length - withoutZeros.length
+return withoutZeros.concat(Array(zerosCount).fill(0))
 }
