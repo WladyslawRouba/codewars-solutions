@@ -1,4 +1,3 @@
-// take any number of promises for arguments
 function all(...promises) {
 return new Promise((resolve,reject) =>{
   const result = []
