@@ -1,25 +1,14 @@
-function sumPairs(arr, target) {
-  const seen = new Set();
- 
-​
-  for (let i = 0; i < arr.length; i++) {
-    const num = arr[i];
-   
-​
-    const complement = target - num;
+function sumPairs(ints, s) {
+  let seen = new Set()
+  
+  for(let i = 0; i < ints.length; i++){
+    const current = ints[i]
+    const needed = s - current
     
-​
-    if (seen.has(complement)) {
-      
-​
-      return [complement, num];
-  
+    if(seen.has(needed)){
+      return [needed, current]
     }
-​
-    seen.add(num);
-​
+    seen.add(current)
   }
-​
-  return undefined;
-  
+  return  undefined ;
 }
