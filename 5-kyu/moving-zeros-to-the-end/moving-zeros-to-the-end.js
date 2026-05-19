@@ -1,9 +1,17 @@
 function moveZeros(arr) {
-  const result = []
-  let zeros = 0
-  for(const item of arr){
-    if(item === 0)zeros++
-  else result.push(item)
+  let insertIndex = 0
+  
+  for(let i = 0; i < arr.length; i++){
+    if(arr[i] !== 0){
+      arr[insertIndex] = arr[i]
+      insertIndex++
+    }
+    
   }
-  return result.concat(Array(zeros).fill(0))
+  while(insertIndex < arr.length){
+    arr[insertIndex] = 0
+    insertIndex++
+    
+  }
+  return arr
 }
